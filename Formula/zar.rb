@@ -33,5 +33,14 @@ class Zar < Formula
     assert_equal "hello\n", (testpath/"out/proj/hello.txt").read
     assert_equal "x" * 100_000, (testpath/"out/proj/sub/data.bin").read
     assert_match version.to_s, shell_output("#{bin}/zar --version")
+
+    # rezar: replace one file and delete another, keeping the rest as is.
+    (testpath/"new/proj/hello.txt").write "hello again\n"
+    system bin/"rezar", "-C", "new", "--replace=proj/hello.txt", "--delete=proj/sub/data.bin",
+           "-o", "edited.zar", "proj.zar"
+    system bin/"unzar", "-C", "edited", "edited.zar"
+    assert_equal "hello again\n", (testpath/"edited/proj/hello.txt").read
+    refute_path_exists testpath/"edited/proj/sub/data.bin"
+    assert_path_exists testpath/"edited/proj/sub"
   end
 end
