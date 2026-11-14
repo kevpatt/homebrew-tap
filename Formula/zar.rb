@@ -3,7 +3,7 @@ class Zar < Formula
   homepage "https://github.com/kevpatt/zar"
   url "https://github.com/kevpatt/zar/archive/refs/tags/v0.7.2.tar.gz"
   sha256 "7f1724051741b064898bbfe93c2ad441aa0ead6fcce871cf5d1f153fca7eccd7"
-  license "BSD-3-Clause"
+  license all_of: ["BSD-3-Clause", "CC0-1.0"]
   head "https://github.com/kevpatt/zar.git", branch: "main"
 
   depends_on "cmake" => :build
