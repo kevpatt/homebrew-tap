@@ -1,8 +1,8 @@
 class Zar < Formula
   desc "Random-access archiver built on zstd"
   homepage "https://github.com/kevpatt/zar"
-  url "https://github.com/kevpatt/zar/archive/refs/tags/v0.7.1.tar.gz"
-  sha256 "5784deb9c126190d9f8a4ee5d32381f79797c0d585efcd03104869db52131ba2"
+  url "https://github.com/kevpatt/zar/archive/refs/tags/v0.7.2.tar.gz"
+  sha256 "7f1724051741b064898bbfe93c2ad441aa0ead6fcce871cf5d1f153fca7eccd7"
   license "BSD-3-Clause"
   head "https://github.com/kevpatt/zar.git", branch: "main"
 
